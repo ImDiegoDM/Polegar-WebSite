@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/styles.css">
+<script type="text/javascript" src="./js/DropDown.js"></script>
 <header>
   <div class="NavBar">
     <ul>
@@ -17,6 +19,17 @@
         </div>
       </li>
     </ul>
+    <div class="logado hide">
+      <p>
+        Olá, <a href="#"><i>Derlane</i></a>
+      </p>
+    </div>
+
+    <div class="logado">
+      <p>
+        <a href="#">Entrar</a> ou <a href="#">Criar Conta</a>
+      </p>
+    </div>
   </div>
 </header>
 
@@ -24,45 +37,67 @@
   <div class="col-12 bottomNav">
     <div class="container col-8">
       <ul>
-        <li><a class="masculino" href="#">Masculino</a></li>
-        <li><a class="feminino" href="#">Feminino</a></li>
-        <li><a class="infantil" href="#">Infantiul</a></li>
-        <li><a class="teen" href="#">Teen</a></li>
+        <li><a class="masculino" onmouseenter="ShowMasc()" href="#">Masculino</a></li>
+        <li><a class="feminino" onmouseenter="ShowFemi()" href="#">Feminino</a></li>
+        <li><a class="teen" onmouseenter="ShowPP()" href="#">Primeiros Passos</a></li>
+        <li><a class="infantil" onmouseenter="ShowInfi()" href="#">Infantiul</a></li>
+        <li><a class="teen" onmouseenter="ShowTeen()" href="#">Juvenil</a></li>
       </ul>
     </div>
     </div>
     <div class="container col-8 itensListas">
-      <div class="ListDropDown masculinoL">
-        <ul>
-          <li><a href="#">Camisa</a></li>
-          <li><a href="#">Short</a></li>
-          <li><a href="#">Bermuda</a></li>
-        </ul>
+      <div id="mascu" onmouseleave="HideAll()" class="ListDropDown masculinoL">
+        <div class="leftBorder">
+          <ul class="myList">
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'mascA')" onmouseleave="RemoveClass(this,'mascA')" href="#">Camisa</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'mascA')" onmouseleave="RemoveClass(this,'mascA')" href="#">Short</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'mascA')" onmouseleave="RemoveClass(this,'mascA')" href="#">Bermuda</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="ListDropDown femininoL">
-        <ul>
-          <li><a href="#">Camisa</a></li>
-          <li><a href="#">Short</a></li>
-          <li><a href="#">Bermuda</a></li>
-        </ul>
+      <div id="fem" onmouseleave="HideAll()" class="ListDropDown femininoL">
+        <div class="leftBorder">
+          <ul class="myList">
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'femiA')" onmouseleave="RemoveClass(this,'femiA')" href="#">Camisa</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'femiA')" onmouseleave="RemoveClass(this,'femiA')" href="#">Short</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'femiA')" onmouseleave="RemoveClass(this,'femiA')" href="#">Bermuda</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="ListDropDown infantiulL">
-        <ul>
-          <li><a href="#">Camisa</a></li>
-          <li><a href="#">Short</a></li>
-          <li><a href="#">Bermuda</a></li>
-        </ul>
+      <div id="inf" onmouseleave="HideAll()" class="ListDropDown infantiulL">
+        <div class="leftBorder">
+          <ul class="myList">
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'infaA')" onmouseleave="RemoveClass(this,'infaA')" href="#">Camisa</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'infaA')" onmouseleave="RemoveClass(this,'infaA')" href="#">Short</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'infaA')" onmouseleave="RemoveClass(this,'infaA')" href="#">Bermuda</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="ListDropDown teenL">
-        <ul>
-          <li><a href="#">Camisa</a></li>
-          <li><a href="#">Short</a></li>
-          <li><a href="#">Bermuda</a></li>
-        </ul>
+      <div id="ten" onmouseleave="HideAll()" class="ListDropDown teenL">
+        <div class="leftBorder">
+          <ul class="myList">
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'teenA')" onmouseleave="RemoveClass(this,'teenA')" href="#">Camisa</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'teenA')" onmouseleave="RemoveClass(this,'teenA')" href="#">Short</a></li>
+            <li><a class="colorBlack" onmouseenter="AddClass(this,'teenA')" onmouseleave="RemoveClass(this,'teenA')" href="#">Bermuda</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="pp" onmouseleave="HideAll()" class="ListDropDown ppL">
+        <div class="leftBorder">
+            <ul class="myList">
+              <li><a class="colorBlack" onmouseenter="AddClass(this,'teenA')" onmouseleave="RemoveClass(this,'teenA')" href="#">Camisa</a></li>
+              <li><a class="colorBlack" onmouseenter="AddClass(this,'teenA')" onmouseleave="RemoveClass(this,'teenA')" href="#">Short</a></li>
+              <li><a class="colorBlack" onmouseenter="AddClass(this,'teenA')" onmouseleave="RemoveClass(this,'teenA')" href="#">Bermuda</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   <div class="container col-8">
     <hr>
+  </div>
+  <div class="col-12">
+    <img class="colecao" src="./img/Mockup.jpg" alt="" />
   </div>
 </body>
 
